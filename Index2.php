@@ -164,9 +164,53 @@
 // echo $text;
 
 
-$i = 1;
-while ($i <= 6) {
-    echo "<br>" , $i;
-    $i++;
-};
-echo "<br> while loop ended";
+// $i = 1;
+// while ($i <= 6) {
+//     echo "<br>" , $i;
+//     $i++;
+// };
+// echo "<br> while loop ended";
+
+$i = 11;
+
+// do {
+//     echo "<br>", $i;
+//     $i++;
+// } while ($i < 6);
+
+// echo $i;
+
+// $colors = array("red", "green", "blue", "yellow");
+
+// foreach ($colors as $val) {
+//     echo "$val <br>";
+// }
+
+// $members = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"45");
+
+// foreach ($members as $key => $value) {
+//     echo "$key : $value <br>";
+// }
+
+// foreach ($members as $name => $age) {
+//     $age = 90;
+
+//     echo "$name : $age <br>";
+// }
+
+// var_dump($members);
+
+Function myMessage() {
+    echo "<br>", "Hello World!";
+}
+
+myMessage();
+
+Function sayHi($name = "Joe") {
+    echo "Hello $name! How are you?<br>";
+}
+
+sayHi();
+sayHi("Ayan");
+sayHi("Mutahar");
+sayHi("Shayan");
