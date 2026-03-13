@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 // function test() {
 //     define("Greeting", "Welcome to W3Schools.com!");
 // }
@@ -200,17 +200,44 @@ $i = 11;
 
 // var_dump($members);
 
-Function myMessage() {
-    echo "<br>", "Hello World!";
+// Function myMessage() {                                                          
+//     echo "<br>", "Hello World!";
+// }
+
+// myMessage();
+
+// Function sayHi($name = "Joe") {
+//     echo "Hello $name! How are you?<br>";
+// }
+
+// sayHi();
+// sayHi("Ayan");
+// sayHi("Mutahar");
+// sayHi("Shayan");
+
+// function add_five(&$value) {
+//     $value += 5;
+// }
+
+// $num = 2;
+// add_five($num);
+// echo $num;
+
+// function sumMyNumbers(...$x) {
+//     $n = 0;
+//     $len = count($x);
+//     for($i = 0; $i < $len; $i++) {
+//         $n += $x[$i];
+//     }
+//     return $n;
+// }
+
+// echo sumMyNumbers(5, 2, 6, 2, 7, 7, 150, 200, 300,450);
+
+// echo 1 + "10 Days";
+
+function addNumbers(float $a, float $b) : float {
+    return $a + $b;
 }
 
-myMessage();
-
-Function sayHi($name = "Joe") {
-    echo "Hello $name! How are you?<br>";
-}
-
-sayHi();
-sayHi("Ayan");
-sayHi("Mutahar");
-sayHi("Shayan");
+echo addNumbers(1.5, 2405);
