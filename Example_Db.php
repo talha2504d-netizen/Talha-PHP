@@ -33,8 +33,8 @@
     }
 
 
-    $sql = "INSERT INTO guests (guest_name, age, phone_number, Entry_Ticket)
-                VALUES('Amjad', 25, 03432125677911, 'd12re457');";
+    // $sql = "INSERT INTO guests (guest_name, age, phone_number, Entry_Ticket)
+    //             VALUES('Amjad', 25, 03432125677911, 'd12re457');";
 
                  mysqli_query($conn, $sql); 
 ?>
