@@ -3,28 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Gravity Flow</title>
+    <title>NutriPlan - Diet Plan Generator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id="simCanvas"></canvas>
-    
-    <div class="dock">
-        <div class="control-group">
-            <button id="toggleGravityBtn" class="premium-btn">
-                <span class="icon">🌌</span>
-                <span id="btnText">Anti-Gravity</span>
-            </button>
-            <div class="separator"></div>
-            <div class="status">
-                <div class="led" id="statusLed"></div>
-                <span id="statusText">Gravity: Descending</span>
+    <div class="blob shape1"></div>
+    <div class="blob shape2"></div>
+
+    <div class="container">
+        <header>
+            <h1>NutriPlan.</h1>
+            <p>Your personalized, data-driven daily nutrition guide.</p>
+        </header>
+
+        <main>
+            <div class="card form-container">
+                <form id="dietForm">
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" min="15" max="100" required placeholder="e.g. 25">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" min="30" max="250" required placeholder="e.g. 70">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" min="100" max="250" required placeholder="e.g. 175">
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label for="activity">Activity Level</label>
+                            <select id="activity" required>
+                                <option value="1.2">Sedentary (office job, no exercise)</option>
+                                <option value="1.375">Lightly Active (1-3 days/week)</option>
+                                <option value="1.55">Moderately Active (3-5 days/week)</option>
+                                <option value="1.725">Very Active (6-7 days/week)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Primary Goal</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="goal" value="lose" required>
+                                    <span class="card-content">Lose Fat</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="goal" value="maintain" checked>
+                                    <span class="card-content">Maintain</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="goal" value="gain">
+                                    <span class="card-content">Build Muscle</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Generate Diet Plan</button>
+                </form>
             </div>
-        </div>
-        <p class="hint">Hover to Repel &middot; Click & Drag to Create a Vortex</p>
+
+            <div id="results" class="card results-container hidden">
+                <div class="results-header">
+                    <h2>Your Ideal Macros</h2>
+                    <p>Based on your profile, here are your target daily numbers.</p>
+                </div>
+
+                <div class="macros-grid">
+                    <div class="macro-card cal">
+                        <h3>Calories</h3>
+                        <div class="value" id="valCals">2500 <span class="unit">kcal</span></div>
+                    </div>
+                    <div class="macro-card pro">
+                        <h3>Protein</h3>
+                        <div class="value" id="valPro">150 <span class="unit">g</span></div>
+                    </div>
+                    <div class="macro-card fat">
+                        <h3>Fats</h3>
+                        <div class="value" id="valFat">70 <span class="unit">g</span></div>
+                    </div>
+                    <div class="macro-card carb">
+                        <h3>Carbs</h3>
+                        <div class="value" id="valCarb">300 <span class="unit">g</span></div>
+                    </div>
+                </div>
+
+                <div class="meal-plan">
+                    <h2>Sample Daily Plan</h2>
+                    <div id="mealList" class="meal-list">
+                        <!-- Meal cards populated by JS -->
+                    </div>
+                </div>
+
+                <button id="resetBtn" class="btn-secondary">Recalculate</button>
+            </div>
+        </main>
     </div>
 
     <script src="script.js"></script>
