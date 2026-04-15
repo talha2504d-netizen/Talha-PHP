@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Gravity Flow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="simCanvas"></canvas>
+    
+    <div class="dock">
+        <div class="control-group">
+            <button id="toggleGravityBtn" class="premium-btn">
+                <span class="icon">🌌</span>
+                <span id="btnText">Anti-Gravity</span>
+            </button>
+            <div class="separator"></div>
+            <div class="status">
+                <div class="led" id="statusLed"></div>
+                <span id="statusText">Gravity: Descending</span>
+            </div>
+        </div>
+        <p class="hint">Hover to Repel &middot; Click & Drag to Create a Vortex</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
